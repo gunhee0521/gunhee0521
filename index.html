@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21간단한 클릭 게임</title>
+    <style>
+        /* CSS 부분 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .game-container {
+            text-align: center;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <!-- HTML 부분 -->
+    <div class="game-container">
+        <h1>클릭 게임</h1>
+        <p>버튼을 클릭하여 점수를 얻으세요!</p>
+        <button id="clickButton">클릭!</button>
+        <p>점수: <span id="score">0</span></p>
+    </div>
+
+    <script>
+        // JavaScript 부분
+        let score = 0;
+
+        const scoreElement = document.getElementById('score');
+        const clickButton = document.getElementById('clickButton');
+
+        clickButton.addEventListener('click', function() {
+            score += 1; // 점수 증가
+            scoreElement.textContent = score; // 화면에 점수 표시
+        });
+    </script>
+</body>
+</html>
